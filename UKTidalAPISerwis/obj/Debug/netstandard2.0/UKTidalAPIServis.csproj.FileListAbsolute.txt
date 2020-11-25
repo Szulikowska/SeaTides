@@ -1,0 +1,12 @@
+C:\Studia\Praca\UKTidalAPISerwis\bin\Debug\netstandard2.0\UKTidalAPIServis.deps.json
+C:\Studia\Praca\UKTidalAPISerwis\bin\Debug\netstandard2.0\UKTidalAPIServis.dll
+C:\Studia\Praca\UKTidalAPISerwis\bin\Debug\netstandard2.0\UKTidalAPIServis.pdb
+C:\Studia\Praca\UKTidalAPISerwis\obj\Debug\netstandard2.0\UKTidalAPIServis.AssemblyInfoInputs.cache
+C:\Studia\Praca\UKTidalAPISerwis\obj\Debug\netstandard2.0\UKTidalAPIServis.AssemblyInfo.cs
+C:\Studia\Praca\UKTidalAPISerwis\obj\Debug\netstandard2.0\UKTidalAPIServis.csproj.CoreCompileInputs.cache
+C:\Studia\Praca\UKTidalAPISerwis\obj\Debug\netstandard2.0\UKTidalAPIServis.dll
+C:\Studia\Praca\UKTidalAPISerwis\obj\Debug\netstandard2.0\UKTidalAPIServis.pdb
+C:\Studia\Praca\UKTidalAPISerwis\obj\Debug\netstandard2.0\UKTidalAPIServis.csprojAssemblyReference.cache
+C:\Studia\Praca\UKTidalAPISerwis\bin\Debug\netstandard2.0\DTO.dll
+C:\Studia\Praca\UKTidalAPISerwis\bin\Debug\netstandard2.0\DTO.pdb
+C:\Studia\Praca\UKTidalAPISerwis\obj\Debug\netstandard2.0\UKTidalAPIServis.csproj.CopyComplete
