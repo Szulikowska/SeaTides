@@ -1,0 +1,12 @@
+C:\Studia\Praca\DAL\bin\Debug\netstandard2.1\DAL.deps.json
+C:\Studia\Praca\DAL\bin\Debug\netstandard2.1\DAL.dll
+C:\Studia\Praca\DAL\bin\Debug\netstandard2.1\DAL.pdb
+C:\Studia\Praca\DAL\bin\Debug\netstandard2.1\DTO.dll
+C:\Studia\Praca\DAL\bin\Debug\netstandard2.1\DTO.pdb
+C:\Studia\Praca\DAL\obj\Debug\netstandard2.1\DAL.csprojAssemblyReference.cache
+C:\Studia\Praca\DAL\obj\Debug\netstandard2.1\DAL.AssemblyInfoInputs.cache
+C:\Studia\Praca\DAL\obj\Debug\netstandard2.1\DAL.AssemblyInfo.cs
+C:\Studia\Praca\DAL\obj\Debug\netstandard2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Studia\Praca\DAL\obj\Debug\netstandard2.1\DAL.csproj.CopyComplete
+C:\Studia\Praca\DAL\obj\Debug\netstandard2.1\DAL.dll
+C:\Studia\Praca\DAL\obj\Debug\netstandard2.1\DAL.pdb

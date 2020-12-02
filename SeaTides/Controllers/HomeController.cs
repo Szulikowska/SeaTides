@@ -27,6 +27,7 @@ namespace SeaTides.Controllers
         public async Task<IActionResult> Index()
         {
             var req = new Requests();
+            
             //await req.GetStationsList(key);
             //await req.GetStation(key, "0001");
             //await req.GetTidalEvents(key, "0001", 6);

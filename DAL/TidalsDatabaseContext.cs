@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using DTO;
+using Newtonsoft.Json;
 
 namespace DAL
 {

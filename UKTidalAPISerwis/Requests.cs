@@ -56,8 +56,8 @@ namespace UKTidalAPISerwis
             var response = await client.GetAsync(uri);
             var res = await response.Content.ReadAsStringAsync();
             StationsList list = JsonConvert.DeserializeObject<StationsList>(res);
-            foreach (Station item in list.Features)
-                item.Events = await GetTidalEvents(primaryKey, item.Properties.Id, 6);
+            //foreach (Station item in list.Features)
+            //    item.Events = await GetTidalEvents(primaryKey, item.Properties.Id, 6);
             return list;
         }
     }

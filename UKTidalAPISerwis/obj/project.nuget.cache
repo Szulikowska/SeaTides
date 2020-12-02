@@ -1,14 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "zK66tGmZu5vh62uE/ZJeZe5drg1GQTJYNecYZwTu6auB65EhD0IZ9lZAwDBIz94s/BVMk6NxZ6CnbgPFcI+bAw==",
+  "dgSpecHash": "KFDOvpGqmkOabFGFyndAQu7R3GLE6clOrk3qPFDMquFP3WwRXG0NlshtK2Xg9I0cS2ykn0B5bqxFRTl6nj/r4w==",
   "success": true,
   "projectFilePath": "C:\\Studia\\Praca\\UKTidalAPISerwis\\UKTidalAPIServis.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Julia\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
-    "C:\\Users\\Julia\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",

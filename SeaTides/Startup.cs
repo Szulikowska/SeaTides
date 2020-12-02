@@ -2,12 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SeaTides.Models;
 
 namespace SeaTides
 {
@@ -24,6 +27,12 @@ namespace SeaTides
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<TidalsDatabaseContext>(options =>
+                 options.UseSqlServer(Configuration.GetConnectionString("TidalsDatabase")));
+
+            var provider = services.BuildServiceProvider();
+            var context = provider.GetRequiredService<TidalsDatabaseContext>();
+            services.AddSingleton<DatabaseViewModel>(new DatabaseViewModel(Configuration, context));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +54,7 @@ namespace SeaTides
             app.UseRouting();
 
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

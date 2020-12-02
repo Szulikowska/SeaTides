@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DTO
 {
     public class Events
     {
+        [JsonIgnore]
+        public int Id { get; set; }
+        [JsonIgnore]
+        public Station Station { get; set; }
         public string EventType { get; set; }
         public DateTime DateTime { get; set; }
         public double Height { get; set; }

@@ -94,3 +94,5 @@ C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\UKTidalAPIServis.dll
 C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\DTO.pdb
 C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\UKTidalAPIServis.pdb
 C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\DAL.pdb

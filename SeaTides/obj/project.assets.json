@@ -1477,10 +1477,28 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "DTO": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
+        }
+      },
       "DTO/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
+          "System.ComponentModel.Annotations": "5.0.0",
           "System.Text.Json": "5.0.0"
         },
         "compile": {
@@ -1492,7 +1510,7 @@
       },
       "UKTidalAPIServis/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "DTO": "1.0.0",
           "Newtonsoft.Json": "12.0.3"
@@ -5593,6 +5611,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
+    },
     "DTO/1.0.0": {
       "type": "project",
       "path": "../DTO/DTO.csproj",
@@ -5606,6 +5629,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "DAL >= 1.0.0",
       "DTO >= 1.0.0",
       "Hangfire.AspNetCore >= 1.7.17",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
@@ -5650,6 +5674,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Studia\\Praca\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Studia\\Praca\\DAL\\DAL.csproj"
+            },
             "C:\\Studia\\Praca\\DTO\\DTO.csproj": {
               "projectPath": "C:\\Studia\\Praca\\DTO\\DTO.csproj"
             },
