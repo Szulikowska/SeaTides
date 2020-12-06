@@ -29,7 +29,7 @@ namespace SeaTides
             services.AddControllersWithViews();
             services.AddDbContext<TidalsDatabaseContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("TidalsDatabase")));
-
+            
             var provider = services.BuildServiceProvider();
             var context = provider.GetRequiredService<TidalsDatabaseContext>();
             services.AddSingleton<DatabaseViewModel>(new DatabaseViewModel(Configuration, context));

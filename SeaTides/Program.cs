@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DTO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,7 +25,11 @@ namespace SeaTides
                 try
                 {
                     var myDependency = services.GetRequiredService<DatabaseViewModel>();
-                    myDependency.AddData();
+                    //myDependency.AddData();
+                    //myDependency.LoadData();
+                    //myDependency.UpdateData();
+                    //myDependency._context.SaveChanges();
+                    System.Console.WriteLine("xdddd");
                 }
                 catch (Exception ex)
                 {

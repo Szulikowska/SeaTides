@@ -16,13 +16,14 @@ namespace DTO
         [ForeignKey("Geometry")]
         [JsonIgnore]
         public int GeometryId { get; set; }
-        public Geometry Geometry { get; set; }
+        public virtual Geometry Geometry { get; set; }
         [ForeignKey("Properties")]
         [JsonIgnore]
         public int PropertiesId { get; set; }
-        public Properties Properties { get; set; }
+        public virtual Properties Properties { get; set; }
+
         [JsonIgnore]
-        public List<Events> Events { set; get; }
+        public virtual List<Events> Events { set; get; }
     }
 
     public class Geometry
@@ -35,19 +36,29 @@ namespace DTO
         [JsonIgnore]
         public double X 
         {
-            get => Coordinates[0];
+            get
+            {
+                return Coordinates[0];
+            }
             set
             {
-                X = Coordinates[0];
+                if (Coordinates == null)
+                    Coordinates = new List<double>();
+                Coordinates.Add(value);
             }
         }
         [JsonIgnore]
         public double Y
         {
-            get => Coordinates[1];
+            get
+            {
+                return Coordinates[1];
+            }
             set
             {
-                Y = Coordinates[1];
+                if (Coordinates == null)
+                    Coordinates = new List<double>();
+                Coordinates.Add(value);
             }
         }
     }

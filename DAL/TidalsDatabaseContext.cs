@@ -9,7 +9,6 @@ namespace DAL
     {
         public TidalsDatabaseContext(DbContextOptions<TidalsDatabaseContext> context) : base(context)
         {
-
         }
         public DbSet<StationsList> Stations { get; set; }
     }

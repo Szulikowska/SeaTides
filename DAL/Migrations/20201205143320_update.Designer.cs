@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(TidalsDatabaseContext))]
-    [Migration("20201202200641_update")]
+    [Migration("20201205143320_update")]
     partial class update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

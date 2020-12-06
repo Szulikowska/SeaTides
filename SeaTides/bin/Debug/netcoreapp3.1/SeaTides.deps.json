@@ -28,6 +28,7 @@
           "DTO": "1.0.0",
           "Hangfire.AspNetCore": "1.7.17",
           "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
