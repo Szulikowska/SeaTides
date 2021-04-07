@@ -6,7 +6,7 @@
       "Microsoft.Hosting.Lifetime": "Information"
     }
   },
-  "AllowedHosts": "*",
+
   "API-Key": "e84152ccc63246e38cc02df68c152d85",
   "ConnectionStrings": {
     "TidalsDatabase": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TidalsDatabase;Integrated Security=True"

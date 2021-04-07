@@ -1,5 +1,3 @@
-C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\SeaTides.exe
 C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\SeaTides.deps.json
 C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\SeaTides.runtimeconfig.json
@@ -98,3 +96,4 @@ C:\Studia\Praca\SeaTides\obj\Debug\netcoreapp3.1\SeaTides.pdb
 C:\Studia\Praca\SeaTides\obj\Debug\netcoreapp3.1\SeaTides.genruntimeconfig.cache
 C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\de\Hangfire.Core.resources.dll
 C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\nb\Hangfire.Core.resources.dll
+C:\Studia\Praca\SeaTides\bin\Debug\netcoreapp3.1\appsettings.json
