@@ -10,6 +10,9 @@ namespace DTO
         [JsonIgnore]
         public int Id { get; set; }
         public string Type { get; set; }
+        /// <summary>
+        /// List with all Features, assigned to a station
+        /// </summary>
         public virtual List<Station> Features { get; set; }
     }
 }

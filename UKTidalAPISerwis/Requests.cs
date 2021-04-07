@@ -9,6 +9,12 @@ namespace UKTidalAPISerwis
 {
     public class Requests
     {
+        /// <summary>
+        /// Gets station from UK Tidal API
+        /// </summary>
+        /// <param name="primaryKey">Primary key to get access to api</param>
+        /// <param name="stationId">Defines which stations data to be downloaded</param>
+        /// <returns></returns>
         public async Task<Station> GetStation(string primaryKey, string stationId)
         {
             var client = new HttpClient();
@@ -25,6 +31,13 @@ namespace UKTidalAPISerwis
             return station;
         }
 
+        /// <summary>
+        /// Gets events assigned to specific station
+        /// </summary>
+        /// <param name="primaryKey">Primary key to get access to api</param>
+        /// <param name="stationId">Defines which stations data to be downloaded</param>
+        /// <param name="duration">Defines range of days</param>
+        /// <returns></returns>
         public async Task<List<Events>> GetTidalEvents(string primaryKey, string stationId, int duration)
         {
             var client = new HttpClient();
@@ -42,6 +55,11 @@ namespace UKTidalAPISerwis
             return events;
         }
 
+        /// <summary>
+        /// Gets all stations list
+        /// </summary>
+        /// <param name="primaryKey">Primary key to get access to api</param>
+        /// <returns></returns>
         public async Task<StationsList> GetStationsList(string primaryKey)
         {
             var client = new HttpClient();

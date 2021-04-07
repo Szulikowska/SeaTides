@@ -14,9 +14,17 @@ namespace SeaTides.Models
     public class DatabaseViewModel
     {
         private readonly IConfiguration _config;
+        /// <summary>
+        /// Context of the databse
+        /// </summary>
         public readonly TidalsDatabaseContext _context;
         private readonly string key;
 
+        /// <summary>
+        /// Class constructor, gets api key from config
+        /// </summary>
+        /// <param name="configuration">instance of IConfiguration</param>
+        /// <param name="context">instance of TidalsDatabaseContext</param>
         public DatabaseViewModel(IConfiguration configuration, TidalsDatabaseContext context)
         {
             _config = configuration;
@@ -24,6 +32,9 @@ namespace SeaTides.Models
             key = _config.GetSection("API-Key").Value;
         }
 
+        /// <summary>
+        /// Adds data to database
+        /// </summary>
         public async void AddData()
         {
             var req = new Requests();
@@ -32,13 +43,19 @@ namespace SeaTides.Models
             _context.SaveChanges();
         }
 
+        /// <summary>
+        /// Loads data from database
+        /// </summary>
+        /// <returns></returns>
         public List<DTO.StationsList> LoadData()
         {
             var data = _context.Stations.Include(x => x.Features).ThenInclude(sg => sg.Geometry).Include(x => x.Features).ThenInclude(se => se.Events).Include(x => x.Features).ThenInclude(sp => sp.Properties).ToList();
             return data;
         }
 
-
+        /// <summary>
+        /// Deletes all data from database
+        /// </summary>
         public void DeleteAllData()
         {
             var data = _context.Stations.Include(x => x.Features).ThenInclude(sg => sg.Geometry).Include(x => x.Features).ThenInclude(se => se.Events).Include(x => x.Features).ThenInclude(sp => sp.Properties).ToList();
@@ -54,6 +71,9 @@ namespace SeaTides.Models
             _context.SaveChanges();
         }
 
+        /// <summary>
+        /// Updates data in database
+        /// </summary>
         public void UpdateData()
         {
             var data = _context.Stations.Include(x => x.Features).ThenInclude(sg => sg.Geometry).Include(x => x.Features).ThenInclude(se => se.Events).Include(x => x.Features).ThenInclude(sp => sp.Properties).ToList();

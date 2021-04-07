@@ -26,12 +26,22 @@ namespace SeaTides.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var req = new Requests();
-            
+            //var req = new Requests();
+
             //await req.GetStationsList(key);
             //await req.GetStation(key, "0001");
             //await req.GetTidalEvents(key, "0001", 6);
             return View();
+        }
+
+        /// <summary>
+        /// Gets list of stations from databse and sent them as JSON
+        /// </summary>
+        /// <param name="database">Singleton of database</param>
+        /// <returns>JSON with stations list</returns>
+        public JsonResult GetStations([FromServices] DatabaseViewModel database)
+        {
+            return Json(database.LoadData());
         }
 
         public IActionResult Privacy()
