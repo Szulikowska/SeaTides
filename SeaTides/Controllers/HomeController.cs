@@ -13,24 +13,15 @@ namespace SeaTides.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration _config;
-        private readonly string key;
 
         public HomeController(ILogger<HomeController> logger, IConfiguration config)
         {
-            _logger = logger;
             _config = config;
-            key = _config.GetSection("API-Key").Value;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            //var req = new Requests();
-
-            //await req.GetStationsList(key);
-            //await req.GetStation(key, "0001");
-            //await req.GetTidalEvents(key, "0001", 6);
             return View();
         }
 

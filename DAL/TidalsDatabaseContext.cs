@@ -8,9 +8,8 @@ namespace DAL
     public class TidalsDatabaseContext : DbContext
     {
         /// <summary>
-        /// Constructor
+        /// Constructor of TidalDatabaseContext
         /// </summary>
-        /// <param name="context"></param>
         public TidalsDatabaseContext(DbContextOptions<TidalsDatabaseContext> context) : base(context)
         {
         }
