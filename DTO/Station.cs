@@ -22,7 +22,6 @@ namespace DTO
         public int PropertiesId { get; set; }
         public virtual Properties Properties { get; set; }
 
-        [JsonIgnore]
         public virtual List<Events> Events { set; get; }
     }
 
@@ -62,7 +61,6 @@ namespace DTO
             }
         }
     }
-
 
     public class Properties
     {

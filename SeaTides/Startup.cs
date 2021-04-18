@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SeaTides.Models;
+using Hangfire;
 
 namespace SeaTides
 {
@@ -29,10 +30,12 @@ namespace SeaTides
             services.AddControllersWithViews();
             services.AddDbContext<TidalsDatabaseContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("TidalsDatabase")));
-            
             var provider = services.BuildServiceProvider();
             var context = provider.GetRequiredService<TidalsDatabaseContext>();
-            services.AddSingleton<DatabaseViewModel>(new DatabaseViewModel(Configuration, context));
+            var scopeFactory = provider.GetService<IServiceScopeFactory>();
+            services.AddSingleton<DatabaseViewModel>(new DatabaseViewModel(Configuration, context, scopeFactory));
+            //services.AddHangfireServer();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

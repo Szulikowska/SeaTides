@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class update : Migration
+    public partial class Update : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -53,6 +53,24 @@ namespace DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserData",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PortName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TimeDifference = table.Column<double>(type: "float", nullable: false),
+                    Longtitude = table.Column<double>(type: "float", nullable: false),
+                    Latitude = table.Column<double>(type: "float", nullable: false),
+                    BasePort = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BasePortName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserData", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Station",
                 columns: table => new
                 {
@@ -92,14 +110,14 @@ namespace DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    StationId = table.Column<int>(type: "int", nullable: true),
                     EventType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Height = table.Column<double>(type: "float", nullable: false),
                     IsApproimateTime = table.Column<bool>(type: "bit", nullable: false),
                     IsApproximateHeight = table.Column<bool>(type: "bit", nullable: false),
                     Filtered = table.Column<bool>(type: "bit", nullable: false),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StationId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -137,6 +155,9 @@ namespace DAL.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Events");
+
+            migrationBuilder.DropTable(
+                name: "UserData");
 
             migrationBuilder.DropTable(
                 name: "Station");

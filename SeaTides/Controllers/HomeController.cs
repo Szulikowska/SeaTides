@@ -1,36 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using SeaTides.Models;
-using UKTidalAPISerwis;
 
 namespace SeaTides.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration _config;
-        private readonly string key;
 
         public HomeController(ILogger<HomeController> logger, IConfiguration config)
         {
-            _logger = logger;
             _config = config;
-            key = _config.GetSection("API-Key").Value;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            //var req = new Requests();
-
-            //await req.GetStationsList(key);
-            //await req.GetStation(key, "0001");
-            //await req.GetTidalEvents(key, "0001", 6);
             return View();
         }
 
@@ -41,7 +30,26 @@ namespace SeaTides.Controllers
         /// <returns>JSON with stations list</returns>
         public JsonResult GetStations([FromServices] DatabaseViewModel database)
         {
-            return Json(database.LoadData());
+            var data = database.LoadData();
+            return Json(data);
+        }
+
+        public JsonResult GetUserStations([FromServices] DatabaseViewModel database)
+        {
+            return Json(database.LoadUserData());
+        }
+
+        [HttpPost]
+        public JsonResult GetStationEventsById([FromServices] DatabaseViewModel database, string id)
+        {
+            return Json(database.LoadStationEventsById(id));
+        }
+
+        [HttpPost]
+        public void SavePortData([FromServices] DatabaseViewModel database, string newPortData)
+        {
+            UsersStation station = JsonConvert.DeserializeObject<UsersStation>(newPortData);
+            database.AddUserData(station);
         }
 
         public IActionResult Privacy()
@@ -52,7 +60,7 @@ namespace SeaTides.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
         }
     }
 }

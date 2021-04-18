@@ -15,16 +15,16 @@ namespace DAL.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.5")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("DTO.Events", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
@@ -62,7 +62,7 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Type")
                         .HasColumnType("nvarchar(max)");
@@ -83,7 +83,7 @@ namespace DAL.Migrations
                     b.Property<int>("PropId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("ContinuousHeightsAvailable")
                         .HasColumnType("bit");
@@ -110,7 +110,7 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("GeometryId")
                         .HasColumnType("int");
@@ -140,7 +140,7 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Type")
                         .HasColumnType("nvarchar(max)");
@@ -150,13 +150,41 @@ namespace DAL.Migrations
                     b.ToTable("Stations");
                 });
 
+            modelBuilder.Entity("DTO.UsersStation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BasePort")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BasePortName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Longtitude")
+                        .HasColumnType("float");
+
+                    b.Property<string>("PortName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("TimeDifference")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserData");
+                });
+
             modelBuilder.Entity("DTO.Events", b =>
                 {
-                    b.HasOne("DTO.Station", "Station")
+                    b.HasOne("DTO.Station", null)
                         .WithMany("Events")
                         .HasForeignKey("StationId");
-
-                    b.Navigation("Station");
                 });
 
             modelBuilder.Entity("DTO.Station", b =>

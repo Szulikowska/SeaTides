@@ -8,9 +8,8 @@ namespace DAL
     public class TidalsDatabaseContext : DbContext
     {
         /// <summary>
-        /// Constructor
+        /// Constructor of TidalDatabaseContext
         /// </summary>
-        /// <param name="context"></param>
         public TidalsDatabaseContext(DbContextOptions<TidalsDatabaseContext> context) : base(context)
         {
         }
@@ -18,5 +17,6 @@ namespace DAL
         /// DbSet to create database, depending of relations and classes in this list
         /// </summary>
         public DbSet<StationsList> Stations { get; set; }
+        public DbSet<UsersStation> UserData { get; set; }
     }
 }

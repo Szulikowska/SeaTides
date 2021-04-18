@@ -24,11 +24,13 @@ namespace SeaTides
 
                 try
                 {
-                    //var myDependency = services.GetRequiredService<DatabaseViewModel>();
+                    var myDependency = services.GetRequiredService<DatabaseViewModel>();
                     //myDependency.AddData();
                     //myDependency.LoadData();
                     //myDependency.UpdateData();
+                    //myDependency.DeleteAllData();
                     //myDependency._context.SaveChanges();
+                    //myDependency.LoadStationEventsById("0034");
                 }
                 catch (Exception ex)
                 {

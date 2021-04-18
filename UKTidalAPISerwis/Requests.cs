@@ -47,7 +47,7 @@ namespace UKTidalAPISerwis
 
             // Request parameters
             queryString["duration"] = duration.ToString();
-            var uri = "https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations/" +stationId + "/TidalEvents?" + queryString;
+            var uri = "https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations/" + stationId + "/TidalEvents?" + queryString;
 
             var response = await client.GetAsync(uri);
             var res = await response.Content.ReadAsStringAsync();
@@ -63,7 +63,6 @@ namespace UKTidalAPISerwis
         public async Task<StationsList> GetStationsList(string primaryKey)
         {
             var client = new HttpClient();
-            var queryString = HttpUtility.ParseQueryString(string.Empty);
 
             // Request headers
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", primaryKey);
